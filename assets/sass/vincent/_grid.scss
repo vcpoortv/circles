@@ -1,0 +1,156 @@
+/*
+  __                                             _    
+ / _|                                           | |   
+| |_ _ __ __ _ _ __ ___   _____      _____  _ __| | __
+|  _| '__/ _` | '_ ` _ \ / _ \ \ /\ / / _ \| '__| |/ /
+| | | | | (_| | | | | | |  __/\ V  V / (_) | |  |   < 
+|_| |_|  \__,_|_| |_| |_|\___| \_/\_/ \___/|_|  |_|\_\
+
+*/
+
+html, body {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+*, *:before, *:after {
+  	box-sizing: inherit;
+}
+
+@mixin phone {
+  @media (max-width: 767px) {
+    .p-1-1 {
+		width: 100%;
+	}
+	.p-1-2 {
+		width: 50%;
+		display: inline-block;
+	}
+	.p-1-3 {
+		width: 33.3%;
+		display: inline-block;
+	}
+	.p-2-3 {
+		width: 66.6%;
+		display: inline-block;
+	}
+	.p-0 {
+		display: none;
+	}
+	.p-1-1,
+	.p-1-2,
+	.p-1-3,
+	.p-2-3 {
+		position: relative;
+		padding-left: .5*$base-spacing-unit;
+		padding-right: .5*$base-spacing-unit;
+	}
+	@content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .t-1-1 {
+		width: 100%;
+	}
+	.t-1-2 {
+		width: 50%;
+		display: inline-block;
+	}
+	.t-1-4 {
+		width: 25%;
+		display: inline-block;
+	}
+	.t-1-3 {
+		width: 33.3%;
+		display: inline-block;
+	}
+	.t-2-3 {
+		width: 66.6%;
+		display: inline-block;
+	}
+	.t-0 {
+		display: none;
+	}
+	.t-1-1,
+	.t-1-2,
+	.t-1-4,
+	.t-1-3,
+	.t-2-3 {
+		position: relative;
+		padding-left: $base-spacing-unit;
+		padding-right: $base-spacing-unit;
+	}
+	@content;
+  }
+}
+
+
+.d-1-1 {
+	width: 100%;
+}
+.d-1-2 {
+	width: 50%;
+	display: inline-block;
+}
+.d-1-4 {
+	width: 25%;
+	display: inline-block;
+}
+.d-1-3 {
+	width: 33.3%;
+	display: inline-block;
+}
+.d-2-3 {
+	width: 66.6%;
+	display: inline-block;
+}
+.d-1-6 {
+	width: 16.6%;
+	display: inline-block;
+}
+.d-column {
+	width: 100%;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.d-1-1,
+.d-1-2,
+.d-1-4,
+.d-1-3,
+.d-2-3,
+.d-1-6,
+.d-column {
+	position: relative;
+	padding-left: $base-spacing-unit;
+	padding-right: $base-spacing-unit;
+}
+
+.grid {
+	position: relative;
+	width: 100%;
+}
+.grid:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.row {
+	height: auto;
+	width: 100%;
+
+	margin: 0 auto;
+
+	padding: 2*$base-spacing-unit 0;
+	
+	@include phone {
+		padding: $base-spacing-unit 0;
+	}
+	@include tablet {
+		padding: $base-spacing-unit 0;
+	}
+}
