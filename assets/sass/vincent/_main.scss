@@ -1,11 +1,64 @@
 body,
 html {
 	margin: 0;
-	background: blue;
-	color: white;
+	background: #fafafa;
+}
+.intro {
+	@extend .grid;
+	padding-top: 2*$base-spacing-unit;
+	padding-bottom: 2*$base-spacing-unit;
+}
+//Example 
+.white,
+.hispanic,
+.black,
+.other {
+	padding: $base-spacing-unit 0;
+	display: inline-block;
+	text-align: center;
+	overflow-x: hidden;
+}
+.society .white {
+	width: 62%;
+	background: #FFDE7D;
+}
+.society .hispanic {
+	width: 17%;
+	background: #00B8A9;
+}
+.society .black {
+	width: 13%; 
+	background: #F6416C;
+}
+.society .other {
+	width: 8%;
+	background: #ccc;
+}
+
+.prison .white {
+	width: 32%;
+	background: #FFDE7D;
+}
+.prison .hispanic {
+	width: 22%;
+	background: #00B8A9;
+}
+.prison .black {
+	width: 37%; 
+	background: #F6416C;
+}
+.prison .other {
+	width: 9%;
+	background: #ccc;
+}
+
+
+.mainframe {
+	@extend .grid;
+
 }
 .item {
-	@extend .d-1-6;
+	@extend .d-1-5;
 
 	@include tablet {
 		@extend .t-1-3;
@@ -13,6 +66,8 @@ html {
 	@include phone {
 		@extend .p-1-2;
 	}
-	margin: $base-spacing-unit 0;
+	padding-top: $base-spacing-unit;
+	padding-bottom: $base-spacing-unit;
+	border: 1px solid #fafafa;
 }
 
